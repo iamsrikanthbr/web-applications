@@ -7,19 +7,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/Login")
-public class Login extends HttpServlet {
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		String email = request.getParameter("email");
-		String password = request.getParameter("password");
-
-		response.sendRedirect("dashboard.html");
-	}
+@WebServlet("/Registration")
+public class Registration extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		response.sendRedirect("registration.html");
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String fname = request.getParameter("fname");
+		String lname = request.getParameter("lname");
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		String gender = request.getParameter("gender");
+
 		response.sendRedirect("login.html");
 	}
 }
